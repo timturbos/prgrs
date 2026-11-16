@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PRGRS.</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="PRGRS.">
+<meta name="theme-color" content="#0F172A">
+<style>
+:root{--c:#0F172A;--b:#334155;--cd:#1E293B;--k:#F8FAFC;--o:#00E5FF;--g:#10B981;--r:#F87171;--m:#94A3B8;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{background:var(--c);color:var(--k);font:16px -apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+#app{max-width:560px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 24px) 18px calc(130px + env(safe-area-inset-bottom,0px))}
+.brand{font-weight:800;letter-spacing:.14em;font-size:15px}.brand i{color:var(--o);font-style:normal}
+.claim{font-size:10px;letter-spacing:.2em;color:var(--m);font-weight:600;margin-top:3px}
+h1{font-size:34px;font-weight:800;letter-spacing:-.02em;margin:22px 0 4px}
+h2{font-size:20px;font-weight:800;margin-bottom:12px}
+.sub{color:var(--m);font-size:15px;margin-bottom:18px}.sm{font-size:12px;color:var(--m);margin-top:3px}
+.lb{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--m);margin:26px 0 10px}
+.cd{background:var(--cd);border:1px solid var(--b);border-radius:24px;padding:18px;margin-bottom:12px}
+.em{text-align:center;color:var(--m);font-size:14px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.g2 .cd{margin:0}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.sv{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-top:6px}.sv small{font-size:14px;color:var(--m);font-weight:600;margin-left:3px}
+.cl{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--m);text-align:center;margin-bottom:4px}
+.hero{display:flex;align-items:center;gap:18px}.ring{position:relative;width:104px;height:104px;flex:none}.ring svg{transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:22px}
+.wk{display:flex;justify-content:space-between;margin-top:16px}.dy{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--m)}
+.dot{width:30px;height:30px;border-radius:50%;background:var(--b)}.dot.on{background:var(--o)}.dot.td{box-shadow:0 0 0 2px var(--c),0 0 0 4px var(--k)}
+.rw{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid var(--b)}.rw:first-child{padding-top:0}.rw:last-child{border:0;padding-bottom:0}
+.ov2,.val{color:var(--o)}.val{font-weight:800}
+.bt{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;font:inherit;font-size:14px;font-weight:700;padding:11px 16px;border-radius:999px;background:var(--b);color:var(--k);text-decoration:none}
+.bt:active{transform:scale(.97)}.pr{background:var(--o);color:#0F172A}.dk{background:var(--k);color:var(--c)}.dg{background:none;color:var(--r)}.bl{width:100%}.s2{padding:7px 12px;font-size:12px}
+.br{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.in{width:100%;font:inherit;font-size:16px;padding:12px 14px;border-radius:14px;border:1px solid var(--b);background:var(--c);color:var(--k);outline:0}.in:focus,.n:focus{border-color:var(--o)}
+.n{width:100%;font:inherit;font-size:16px;font-weight:700;text-align:center;padding:10px 4px;border-radius:12px;border:1px solid var(--b);background:var(--c);color:var(--k);outline:0}
+.bk{display:inline-block;color:var(--m);font-weight:700;font-size:14px;cursor:pointer}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:8px}.hd b{font-size:17px}
+.ib{border:0;background:var(--b);color:var(--k);width:34px;height:34px;border-radius:50%;font-size:15px;font-weight:800;cursor:pointer;margin-left:6px}.ib:disabled{opacity:.35}
+.sh1,.sr{display:grid;grid-template-columns:28px 1fr 1fr 46px;gap:8px;align-items:center}.sh1{margin-top:14px;font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--m);text-align:center}.sr{margin-top:8px}.sr>span{text-align:center;font-weight:800;color:var(--m)}
+.ck{width:46px;height:42px;border-radius:14px;border:1px solid var(--b);background:var(--c);color:var(--m);font-size:18px;font-weight:800;cursor:pointer}.ck.on{background:var(--o);border-color:var(--o);color:#0F172A}
+.bn{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-radius:20px;background:var(--cd);color:var(--k);border:1px solid var(--g);margin-bottom:14px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:80;display:flex;align-items:flex-end;justify-content:center}
+.sh{width:min(100%,560px);max-height:84dvh;overflow:auto;border-radius:28px 28px 0 0;padding:20px 20px calc(24px + env(safe-area-inset-bottom,0px));background:rgba(15,23,42,.9);-webkit-backdrop-filter:blur(28px) saturate(180%);backdrop-filter:blur(28px) saturate(180%);border:1px solid rgba(148,163,184,.25)}
+.pk{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 0;border-bottom:1px solid var(--b)}
+.rb{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(96px + env(safe-area-inset-bottom,0px));width:min(92%,440px);z-index:60;display:flex;justify-content:space-between;align-items:center;padding:10px 12px 10px 18px;border-radius:28px;background:rgba(30,41,59,.94);border:1px solid var(--g);color:var(--k);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:0 10px 30px rgba(33,31,29,.3)}
+.rb .sm{color:var(--m);margin:0}.rt{font-size:22px;color:var(--g);font-variant-numeric:tabular-nums}
+.rbn{border:0;cursor:pointer;font:inherit;font-size:12px;font-weight:700;padding:8px 12px;margin-left:6px;border-radius:999px;background:rgba(148,163,184,.2);color:var(--k)}
+#tabs{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));width:min(92%,440px);display:flex;padding:8px;border-radius:34px;background:rgba(30,41,59,.65);-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(148,163,184,.25);box-shadow:0 10px 30px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.08);z-index:50}
+.tb{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:9px 0 8px;border-radius:26px;font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--m);cursor:pointer;transition:background .25s,color .25s}
+.tb svg{width:22px;height:22px}.tb.on{color:var(--o);background:rgba(0,229,255,.14)}
+svg text{fill:#94A3B8}svg text[font-weight="700"]{fill:#F8FAFC}
+</style></head><body><div id="app"></div><div id="rest"></div><nav id="tabs"></nav>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7),num=v=>{const n=parseFloat(String(v).replace(',','.'));return isFinite(n)&&n>=0?n:0};
+const fmt=n=>Math.round(n).toLocaleString('de-AT'),kg=n=>String(n).replace('.',','),dt=t=>new Date(t).toLocaleDateString('de-AT',{weekday:'short',day:'2-digit',month:'2-digit'});
+const MU=['Brust','Rücken','Schultern','Bizeps','Trizeps','Beine','Core','Ganzkörper'];
+const DEF=[['Bankdrücken',0],['Schrägbankdrücken',0],['Butterfly',0],['Dips',0],['Klimmzüge',1],['Rudern',1],['Latziehen',1],['Kreuzheben',1],['Schulterdrücken',2],['Seitheben',2],['Face Pulls',2],['Bizeps-Curls',3],['Hammer-Curls',3],['Trizeps-Drücken',4],['Stirndrücken',4],['Kniebeugen',5],['Beinpresse',5],['Rumänisches Kreuzheben',5],['Beinbeuger',5],['Beinstrecker',5],['Wadenheben',5],['Plank',6],['Crunches',6],['Beinheben',6]].map(([n,m],i)=>({id:'d'+i,name:n,m:MU[m]}));
+let S={plans:[],ex:[],hist:[],active:null,restLen:90,goal:4,body:[],pull:[],cardio:[],cats:[]},R={tab:'home'},restEnd=0;
+const lib=()=>DEF.concat(S.ex),vol=w=>w.ex.reduce((a,e)=>a+e.sets.reduce((b,s)=>b+(s.done?s.w*s.r:0),0),0);
+const last=id=>{for(const w of S.hist){const e=w.ex.find(x=>x.id===id);if(e){const d=e.sets.filter(s=>s.done);if(d.length)return d.reduce((a,s)=>s.w>=a.w?s:a)}}};
+const idb=()=>new Promise((ok,no)=>{const r=indexedDB.open('prgrs',1);r.onupgradeneeded=()=>r.result.createObjectStore('kv');r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)});
+async function load(){try{const db=await idb();return await new Promise(ok=>{const q=db.transaction('kv').objectStore('kv').get('state');q.onsuccess=()=>ok(q.result);q.onerror=()=>ok()})}catch(e){}}
+async function save(){try{const db=await idb();db.transaction('kv','readwrite').objectStore('kv').put(S,'state')}catch(e){}}
+const commit=()=>{save();render()};
+const ph=(t,s,p,l)=>`<div class="brand">PRGRS<i>.</i></div><h1>${t}</h1><div class="sub">${s}</div><div class="cd"><b>GEPLANT · ${p}</b>${l.map(x=>`<div class="rw">${x}</div>`).join('')}</div><div class="sm">Noch nicht implementiert.</div>`;
+function home(){const d=new Date();d.setHours(0,0,0,0);const ws=new Date(d);ws.setDate(d.getDate()-(d.getDay()+6)%7);const w0=+ws,wk=S.hist.filter(w=>w.end>=w0);
+const days=['Mo','Di','Mi','Do','Fr','Sa','So'].map((n,i)=>{const a=w0+i*864e5;return`<div class="dy"><i class="dot${S.hist.some(w=>w.end>=a&&w.end<a+864e5)?' on':''}${a===+d?' td':''}"></i>${n}</div>`}).join('');
+const best={};S.hist.forEach(w=>w.ex.forEach(e=>e.sets.forEach(s=>{if(s.done&&s.w>(best[e.name]||0))best[e.name]=s.w})));
+const rec=Object.entries(best).sort((a,b)=>b[1]-a[1]).slice(0,3),off=264*(1-Math.min(wk.length/S.goal,1));
+return`<div class="brand">PRGRS<i>.</i></div><div class="claim">BUILT BY PROGRESS.</div><h1>Dashboard</h1><div class="sub">Deine Woche auf einen Blick.</div>
+<div class="cd"><div class="hero"><div class="ring"><svg width="104" height="104" viewBox="0 0 104 104"><circle cx="52" cy="52" r="42" fill="none" stroke="#334155" stroke-width="10"/><circle cx="52" cy="52" r="42" fill="none" stroke="#00E5FF" stroke-width="10" stroke-linecap="round" stroke-dasharray="264" stroke-dashoffset="${off}"/></svg><b>${wk.length}/${S.goal}</b></div><div><div class="cl" style="text-align:left">TRAINING DIESE WOCHE</div><div class="sv">${wk.length}<small>Einheiten</small></div><div class="sm">Wochenziel: ${S.goal}</div></div></div><div class="wk">${days}</div></div>
+<div class="lb">ÜBERSICHT</div><div class="g2"><div class="cd"><div class="cl" style="text-align:left">VOLUMEN</div><div class="sv">${fmt(wk.reduce((a,w)=>a+vol(w),0))}<small>kg</small></div><div class="sm">diese Woche</div></div><div class="cd"><div class="cl" style="text-align:left">SÄTZE</div><div class="sv">${wk.reduce((a,w)=>a+w.ex.reduce((b,e)=>b+e.sets.length,0),0)}</div><div class="sm">diese Woche</div></div><div class="cd"><div class="cl" style="text-align:left">CARDIO</div><div class="sv">${fmt(S.cardio.filter(x=>x.t>=w0).reduce((a,x)=>a+x.min,0))}<small>Min</small></div><div class="sm">diese Woche</div></div><div class="cd"><div class="cl" style="text-align:left">KÖRPERGEWICHT</div><div class="sv">${lastv(S.body,'w')?kg(lastv(S.body,'w')):'–'}<small>kg</small></div><div class="sm">letzter Eintrag</div></div><div class="cd"><div class="cl" style="text-align:left">KLIMMZÜGE</div><div class="sv">${Math.max(0,...S.pull.map(x=>x.n))||'–'}<small>Wdh.</small></div><div class="sm">persönlicher Rekord</div></div></div>
+<div class="lb">LETZTE EINHEITEN</div><div class="cd">${S.hist.length?S.hist.slice(0,3).map(w=>`<div class="rw"><div><b>${esc(w.name)}</b><div class="sm">${dt(w.start)}</div></div><span class="val">${fmt(vol(w))} kg</span></div>`).join(''):'<div class="em">Noch keine Einheiten. Starte unter TRAINING.</div>'}</div>
+<div class="lb">PERSÖNLICHE REKORDE</div><div class="cd">${rec.length?rec.map(([n,v])=>`<div class="rw"><div><b>${esc(n)}</b><div class="sm">Höchstes Gewicht</div></div><span class="val">${kg(v)} kg</span></div>`).join(''):'<div class="em">Rekorde erscheinen nach dem ersten Training.</div>'}</div>`}
+function training(){return`<div class="brand">PRGRS<i>.</i></div><h1>Training</h1><div class="sub">Deine Pläne. Deine Regeln.</div>
+${S.active?`<div class="bn"><div><b>Training läuft</b><div class="sm" style="color:#C9C2B6">${esc(S.active.name)}</div></div><button class="bt pr s2" data-a="resume">Fortsetzen</button></div>`:''}
+<button class="bt dk bl" data-a="newplan">+ Neuer Trainingsplan</button><div class="lb">MEINE PLÄNE</div>
+${S.plans.length?'':'<div class="cd em">Noch keine Pläne. Erstelle deinen ersten.</div>'}
+${S.plans.map(p=>`<div class="cd"><b style="font-size:18px">${esc(p.name)}</b><div class="sm">${p.ex.length} Übungen</div><div class="br"><button class="bt pr" data-a="start" data-id="${p.id}">Starten</button><button class="bt" data-a="edit" data-id="${p.id}">Bearbeiten</button><button class="bt" data-a="dup" data-id="${p.id}">Duplizieren</button><button class="bt dg" data-a="delplan" data-id="${p.id}">Löschen</button></div></div>`).join('')}
+<div class="lb">HISTORIE</div><div class="cd">${S.hist.length?S.hist.slice(0,20).map(w=>`<div class="rw"><div><b>${esc(w.name)}</b><div class="sm">${dt(w.start)} · ${Math.max(1,Math.round((w.end-w.start)/6e4))} Min · ${w.ex.reduce((a,e)=>a+e.sets.length,0)} Sätze</div></div><div style="text-align:right"><span class="val">${fmt(vol(w))} kg</span><br><button class="bt dg s2" data-a="delhist" data-id="${w.id}">Löschen</button></div></div>`).join(''):'<div class="em">Noch keine abgeschlossenen Trainings.</div>'}</div>`}
+const ni=(v,f,x='')=>`<input class="n" inputmode="decimal" value="${v?kg(v):''}" data-f="${f}" ${x}>`;
+function plan(){const p=S.plans.find(x=>x.id===R.id);if(!p){R={tab:'training'};return training()}
+return`<a class="bk" data-a="tab" data-t="training">← Zurück</a><h1>Plan bearbeiten</h1><input class="in" value="${esc(p.name)}" data-f="pname" placeholder="Name des Plans"><div class="lb">ÜBUNGEN</div>${p.ex.length?'':'<div class="cd em">Noch keine Übungen.</div>'}
+${p.ex.map((e,i)=>`<div class="cd"><div class="hd"><b>${esc(e.name)}</b><span><button class="ib" data-a="up" data-u="${e.u}" ${i?'':'disabled'}>↑</button><button class="ib" data-a="dn" data-u="${e.u}" ${i<p.ex.length-1?'':'disabled'}>↓</button><button class="ib" data-a="rmex" data-u="${e.u}">×</button></span></div><div class="g3"><div><div class="cl">SÄTZE</div>${ni(e.sets,'psets',`data-u="${e.u}"`)}</div><div><div class="cl">WDH.</div>${ni(e.reps,'preps',`data-u="${e.u}"`)}</div><div><div class="cl">ZIEL KG</div>${ni(e.w,'pw',`data-u="${e.u}"`)}</div></div></div>`).join('')}
+<button class="bt pr bl" data-a="openpick">+ Übung hinzufügen</button>${R.pick?picker():''}`}
+const picker=()=>`<div class="ov" data-a="closepick"><div class="sh"><h2>Übung hinzufügen</h2><input class="in" id="q" placeholder="Suchen…">${lib().map(x=>`<div class="pk" data-n="${esc(x.name.toLowerCase())}"><div data-a="pick" data-id="${x.id}" style="flex:1"><b>${esc(x.name)}</b><div class="sm">${x.m}${x.c?' · eigene Übung':''}</div></div>${x.c?`<button class="bt dg s2" data-a="delex" data-id="${x.id}">Löschen</button>`:''}</div>`).join('')}<div class="lb">EIGENE ÜBUNG</div><input class="in" id="nn" placeholder="Name der Übung"><select class="in" id="nm" style="margin:8px 0">${MU.map(m=>`<option>${m}</option>`).join('')}</select><button class="bt pr bl" data-a="newex">Erstellen und hinzufügen</button><button class="bt bl" style="margin-top:8px" data-a="closepick">Schließen</button></div></div>`;
+function active(){const a=S.active;if(!a){R={tab:'training'};return training()}
+const el=Math.floor((Date.now()-a.start)/6e4),dn=a.ex.reduce((n,e)=>n+e.sets.filter(s=>s.done).length,0);
+return`<a class="bk" data-a="tab" data-t="training">← Training</a><h1>${esc(a.name)}</h1><div class="sub">${el} Min · ${dn} Sätze · ${fmt(vol(a))} kg</div>
+<div class="br" style="margin:0 0 14px;align-items:center"><span class="sm" style="margin:0">Pause:</span>${[60,90,120,180].map(s=>`<button class="bt s2${S.restLen===s?' dk':''}" data-a="rl" data-n="${s}">${s} s</button>`).join('')}</div>
+${a.ex.map((e,i)=>{const l=last(e.id);return`<div class="cd"><b style="font-size:17px">${esc(e.name)}</b><div class="sm">${l?'Zuletzt: '+kg(l.w)+' kg × '+l.r:'Noch keine Vorleistung'}</div><div class="sh1"><div>SATZ</div><div>KG</div><div>WDH.</div><div>OK</div></div>
+${e.sets.map((s,j)=>`<div class="sr"><span>${j+1}</span>${ni(s.w,'aw',`data-e="${i}" data-s="${j}"`)}${ni(s.r,'ar',`data-e="${i}" data-s="${j}"`)}<button class="ck${s.done?' on':''}" data-a="chk" data-e="${i}" data-s="${j}">✓</button></div>`).join('')}
+<div class="br"><button class="bt s2" data-a="addset" data-e="${i}">+ Satz</button>${e.sets.length>1?`<button class="bt dg s2" data-a="rmset" data-e="${i}">Letzten entfernen</button>`:''}</div></div>`}).join('')}
+<div class="br" style="margin-top:22px"><button class="bt pr bl" data-a="finish">Training beenden</button><button class="bt dg bl" data-a="discard">Verwerfen</button></div>`}
+function profil(){return`<div class="brand">PRGRS<i>.</i></div><h1>Profil</h1><div class="sub">Einstellungen und Datensicherung.</div>
+<div class="cd"><div class="cl" style="text-align:left">WOCHENZIEL (EINHEITEN)</div><div style="margin-top:6px">${ni(S.goal,'goal')}</div></div>
+<div class="cd"><b>Datensicherung</b><div class="sm">Deine Daten liegen nur auf diesem Gerät. Sichere sie regelmäßig als Datei.</div><div class="br"><button class="bt pr" data-a="export">Backup speichern</button><label class="bt">Backup laden<input type="file" accept=".json,application/json" data-f="import" hidden></label></div></div>
+<div class="cd"><b>Noch nicht implementiert</b><div class="sm">Automatischer Apple-Health-Import und iCloud-Sync (beides braucht eine native iOS-App).</div></div>`}
+const today=()=>{const d=new Date();return new Date(d-d.getTimezoneOffset()*6e4).toISOString().slice(0,10)};
+const sorted=(a,k)=>a.filter(x=>x[k]>0).sort((p,q)=>p.t-q.t),lastv=(a,k)=>{const p=sorted(a,k);return p.length?p[p.length-1][k]:0};
+const fld=(l,id,t='decimal')=>`<div><div class="cl" style="text-align:left">${l}</div><input class="n" id="${id}" inputmode="${t}"></div>`;
+const dfld=id=>`<div><div class="cl" style="text-align:left">DATUM</div><input class="in" type="date" id="${id}" value="${today()}" style="padding:9px"></div>`;
+const pd=id=>+new Date($('#'+id).value+'T12:00')||Date.now();
+const card=(t,c)=>`<div class="cd"><div class="cl" style="text-align:left">${t}</div>${c}</div>`;
+const sel=(f,o,cur)=>`<select class="in" data-f="${f}" style="margin-bottom:10px">${o.map(([v,l])=>`<option value="${esc(v)}"${v===cur?' selected':''}>${esc(l)}</option>`).join('')}</select>`;
+const cap=(a,k,u)=>{const p=sorted(a,k);return p.length>1?`<div class="sm">Von ${kg(p[0][k])} auf ${kg(p[p.length-1][k])} ${u}</div>`:''};
+function line(a,k,u){const p=sorted(a,k);if(p.length<2)return`<div class="em">${p.length?'Ein Wert gespeichert. Ab dem zweiten erscheint das Diagramm.':'Noch keine Werte.'}</div>`;
+const vs=p.map(x=>x[k]),mn=Math.min(...vs),r=(Math.max(...vs)-mn)||1,t0=p[0].t,tr=(p[p.length-1].t-t0)||1,X=t=>20+(t-t0)/tr*280,Y=v=>110-(v-mn)/r*85;
+return`<svg viewBox="0 0 320 140" width="100%"><polyline fill="none" stroke="#00E5FF" stroke-width="3" stroke-linejoin="round" points="${p.map(x=>X(x.t)+','+Y(x[k])).join(' ')}"/>${p.map(x=>`<circle cx="${X(x.t)}" cy="${Y(x[k])}" r="4" fill="#00E5FF"/>`).join('')}<text x="20" y="134" font-size="10" fill="#94A3B8">${dt(t0)}</text><text x="300" y="134" font-size="10" fill="#94A3B8" text-anchor="end">${dt(p[p.length-1].t)}</text><text x="300" y="12" font-size="11" font-weight="700" text-anchor="end">Max ${kg(Math.max(...vs))} ${u}</text></svg>`}
+function bars(o){const mx=Math.max(...o.map(i=>i.v),1),w=320/o.length;return`<svg viewBox="0 0 320 140" width="100%">${o.map((i,n)=>{const h=i.v/mx*90;return`<rect x="${n*w+w*.15}" y="${110-h}" width="${w*.7}" height="${Math.max(h,3)}" rx="5" fill="${i.v?'#00E5FF':'#334155'}"/><text x="${n*w+w/2}" y="130" font-size="10" fill="#94A3B8" text-anchor="middle">${i.l}</text>${i.v?`<text x="${n*w+w/2}" y="${104-h}" font-size="10" font-weight="700" text-anchor="middle">${kg(Math.round(i.v*10)/10)}</text>`:''}`}).join('')}</svg>`}
+const buckets=(L,f,m)=>{const d=new Date();d.setHours(0,0,0,0);const o=[],N=m?6:8,M=['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];for(let i=N-1;i>=0;i--){let a,e;if(m){a=new Date(d.getFullYear(),d.getMonth()-i,1);e=new Date(d.getFullYear(),d.getMonth()-i+1,1)}else{a=new Date(d);a.setDate(d.getDate()-(d.getDay()+6)%7-i*7);e=new Date(a);e.setDate(a.getDate()+7)}o.push({l:m?M[a.getMonth()]:a.getDate()+'.'+(a.getMonth()+1),v:L.filter(x=>x.t>=+a&&x.t<+e).reduce((q,x)=>q+f(x),0)})}return o};
+const delBtn=(a,id)=>`<button class="bt dg s2" data-a="${a}" data-id="${id}">Löschen</button>`;
+function stats(){const g=R.seg||'kraft',seg=`<div class="br" style="margin:0 0 14px">${[['kraft','Kraft'],['body','Körper'],['pull','Klimmzüge'],...S.cats.map(c=>[c.id,c.name]),['new','+ Eigene']].map(([k,l])=>`<button class="bt s2${g===k?' dk':''}" data-a="seg" data-k="${k}">${esc(l)}</button>`).join('')}</div>`;let b='';
+if(g==='kraft'){if(!S.hist.length)b='<div class="cd em">Noch keine Trainings. Statistiken erscheinen nach der ersten Einheit.</div>';else{
+const names=[...new Set(S.hist.flatMap(w=>w.ex.map(e=>e.name)))],sx=names.includes(R.sx)?R.sx:names[0],pts=S.hist.map(w=>{const e=w.ex.find(x=>x.name===sx);return{t:w.end,v:e?Math.max(0,...e.sets.map(s=>s.w)):0}}),H=S.hist.map(w=>({t:w.end,v:vol(w),r:w.ex.reduce((a,e)=>a+e.sets.reduce((q,s)=>q+s.r,0),0)}));
+b=card('GEWICHTSSTEIGERUNG',sel('sx',names.map(n=>[n,n]),sx)+line(pts,'v','kg')+cap(pts,'v','kg')+`<div class="sm">Persönlicher Rekord: ${kg(Math.max(0,...pts.map(p=>p.v)))} kg</div>`)+card('TRAININGSVOLUMEN (KG PRO WOCHE)',bars(buckets(H,x=>x.v)))+card('WIEDERHOLUNGEN PRO WOCHE',bars(buckets(H,x=>x.r)))+card('EINHEITEN PRO WOCHE',bars(buckets(H,()=>1)))}}
+else if(g==='body'){const bk=R.bk||'brust',K={brust:['Brustumfang','cm'],bauch:['Bauchumfang','cm'],taille:['Taillenumfang','cm'],arm:['Oberarmumfang','cm'],fett:['Körperfettanteil','%']};
+b=card('NEUER EINTRAG',`<div class="g2">${dfld('bd')}${fld('GEWICHT KG','bw')}${fld('BRUST CM','bc')}${fld('BAUCH CM','bb')}${fld('TAILLE CM','bt')}${fld('OBERARM CM','ba')}${fld('KÖRPERFETT %','bf')}</div><button class="bt pr bl" style="margin-top:14px" data-a="addbody">Speichern</button>`)+card('KÖRPERGEWICHT',line(S.body,'w','kg')+cap(S.body,'w','kg'))+card('UMFÄNGE',sel('bk',Object.entries(K).map(([k,v])=>[k,v[0]]),bk)+line(S.body,bk,K[bk][1])+cap(S.body,bk,K[bk][1]))
++card('EINTRÄGE',S.body.length?[...S.body].sort((p,q)=>q.t-p.t).slice(0,10).map(x=>`<div class="rw"><div><b>${dt(x.t)}</b><div class="sm">${[x.w&&kg(x.w)+' kg',x.brust&&'Brust '+kg(x.brust),x.bauch&&'Bauch '+kg(x.bauch),x.taille&&'Taille '+kg(x.taille),x.arm&&'Arm '+kg(x.arm),x.fett&&kg(x.fett)+' % KFA'].filter(Boolean).join(' · ')}</div></div>${delBtn('delb',x.id)}</div>`).join(''):'<div class="em">Noch keine Einträge.</div>')}
+else if(g==='new'){b=card('NEUE KATEGORIE',`<div class="sm" style="margin:0 0 12px">Zum Beispiel Ruhepuls, Schlaf, Liegestütze oder Schritte.</div><div class="g2"><div><div class="cl" style="text-align:left">NAME</div><input class="in" id="kn" style="padding:10px" maxlength="30"></div><div><div class="cl" style="text-align:left">EINHEIT</div><input class="in" id="ku" style="padding:10px" maxlength="10" placeholder="z. B. kg, Std."></div></div><button class="bt pr bl" style="margin-top:14px" data-a="newcat">Kategorie erstellen</button>`)}
+else if(S.cats.some(x=>x.id===g)){const c=S.cats.find(x=>x.id===g),u=esc(c.unit);b=card('NEUER EINTRAG · '+esc(c.name.toUpperCase()),`<div class="g2">${dfld('kd')}${fld('WERT'+(u?' ('+u+')':''),'kv')}</div><button class="bt pr bl" style="margin-top:14px" data-a="addcat" data-id="${c.id}">Speichern</button>`)+card('VERLAUF',line(c.entries,'v',u)+cap(c.entries,'v',u)+`<div class="sm">Höchster Wert: ${kg(Math.max(0,...c.entries.map(x=>x.v)))} ${u}</div>`)+card('EINTRÄGE',c.entries.length?[...c.entries].sort((p,q)=>q.t-p.t).slice(0,10).map(x=>`<div class="rw"><div><b>${kg(x.v)} ${u}</b><div class="sm">${dt(x.t)}</div></div><button class="bt dg s2" data-a="delent" data-id="${x.id}" data-c="${c.id}">Löschen</button></div>`).join(''):'<div class="em">Noch keine Einträge.</div>')+`<button class="bt dg" style="margin-top:6px" data-a="delcat" data-id="${c.id}">Kategorie löschen</button>`}
+else{b=card('NEUER EINTRAG',`<div class="g2">${dfld('pd')}${fld('SAUBERE WDH.','pn','numeric')}</div><button class="bt pr bl" style="margin-top:14px" data-a="addpull">Speichern</button>`)+card('FORTSCHRITT',line(S.pull,'n','Wdh.')+cap(S.pull,'n','Wdh.')+`<div class="sm">Persönlicher Rekord: ${Math.max(0,...S.pull.map(x=>x.n))} Wdh.</div>`)+card('EINTRÄGE',S.pull.length?[...S.pull].sort((p,q)=>q.t-p.t).slice(0,10).map(x=>`<div class="rw"><div><b>${x.n} Wdh.</b><div class="sm">${dt(x.t)}</div></div>${delBtn('delp',x.id)}</div>`).join(''):'<div class="em">Noch keine Einträge.</div>')}
+return`<div class="brand">PRGRS<i>.</i></div><h1>Stats</h1><div class="sub">Deine Entwicklung in Daten.</div>${seg}${b}`}
+function cardio(){const m=R.per==='m',met=R.met||'min',U={min:'MINUTEN',kcal:'AKTIVE KALORIEN',km:'DISTANZ (KM)'},d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()-(d.getDay()+6)%7);const wk=S.cardio.filter(x=>x.t>=+d),sm=k=>wk.reduce((a,x)=>a+x[k],0),hr=wk.filter(x=>x.avg>0);
+const T=['Stairmaster','Crosstrainer','Fahrrad (Ergometer)','Laufband','Laufen outdoor','Radfahren outdoor','Rudergerät','Schwimmen','Gehen outdoor','HIIT','Sonstiges'],st=(l,v,u)=>`<div class="cd"><div class="cl" style="text-align:left">${l}</div><div class="sv">${v}<small>${u}</small></div><div class="sm">diese Woche</div></div>`;
+return`<div class="brand">PRGRS<i>.</i></div><h1>Cardio</h1><div class="sub">Ausdauer im Blick.</div>
+<div class="g2">${st('DAUER',fmt(sm('min')),'Min')}${st('KALORIEN',fmt(sm('kcal')),'kcal')}${st('DISTANZ',kg(Math.round(sm('km')*10)/10),'km')}${st('Ø PULS',hr.length?Math.round(hr.reduce((a,x)=>a+x.avg,0)/hr.length):'–','bpm')}</div>
+<div class="lb">VERLAUF</div><div class="br" style="margin:0 0 10px">${[['w','Wochen'],['m','Monate']].map(([k,l])=>`<button class="bt s2${(m?'m':'w')===k?' dk':''}" data-a="per" data-k="${k}">${l}</button>`).join('')}</div>
+${card(U[met],sel('met',Object.entries(U).map(([k,v])=>[k,v]),met)+bars(buckets(S.cardio,x=>x[met],m)))}${card('Ø HERZFREQUENZ',line(S.cardio,'avg','bpm')+cap(S.cardio,'avg','bpm'))}
+<div class="lb">TRAINING EINTRAGEN</div>${card('NEUES CARDIO-TRAINING',`<div class="g2">${dfld('cd')}<div><div class="cl" style="text-align:left">ART</div><select class="in" id="ct" style="padding:10px">${T.map(t=>`<option>${t}</option>`).join('')}</select></div>${fld('DAUER MIN','cm')}${fld('Ø PULS','ca','numeric')}${fld('MAX. PULS','cx','numeric')}${fld('KALORIEN','ck')}${fld('DISTANZ KM','cs')}${fld('SCHRITTE','cp','numeric')}</div><button class="bt pr bl" style="margin-top:14px" data-a="addcardio">Speichern</button>`)}
+<div class="lb">HISTORIE</div><div class="cd">${S.cardio.length?[...S.cardio].sort((p,q)=>q.t-p.t).slice(0,15).map(x=>`<div class="rw"><div><b>${esc(x.type)} · ${kg(x.min)} Min</b><div class="sm">${[dt(x.t),x.km&&kg(x.km)+' km',x.kcal&&fmt(x.kcal)+' kcal',x.avg&&'Ø '+x.avg+' bpm',x.max&&'max '+x.max,x.steps&&fmt(x.steps)+' Schritte'].filter(Boolean).join(' · ')}</div></div>${delBtn('delc',x.id)}</div>`).join(''):'<div class="em">Noch keine Cardio-Einheiten.</div>'}</div>
+<div class="sm" style="margin-top:14px">Die Werte trägst du vorerst von Hand ein, zum Beispiel aus der Apple-Workout-App. Ein automatischer Import aus Apple Health ist in dieser Web-App nicht möglich.</div>`}
+const TABS=[['home','HOME','M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z'],['training','TRAINING','M6 7v10M18 7v10M3 10v4M21 10v4M6 12h12'],['cardio','CARDIO','M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z'],['stats','STATS','M4 20V11M10 20V4M16 20v-6M21 20H3'],['profil','PROFIL','M4 21a8 8 0 0 1 16 0M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8z']];
+function render(){const v=R.view==='plan'?plan():R.view==='active'?active():({home,training,profil,cardio,stats})[R.tab]();
+$('#app').innerHTML=v;$('#tabs').innerHTML=TABS.map(t=>`<a class="tb${t[0]===R.tab?' on':''}" data-a="tab" data-t="${t[0]}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="${t[2]}"/></svg>${t[1]}</a>`).join('');tick()}
+function tick(){const el=$('#rest');let h='';if(restEnd&&R.view==='active'){const s=Math.max(0,Math.ceil((restEnd-Date.now())/1000));h=`<div class="rb"><div><div class="sm">PAUSE</div><b class="rt${s?'':' ov2'}">${s?Math.floor(s/60)+':'+String(s%60).padStart(2,'0'):'Weiter!'}</b></div><span><button class="rbn" data-a="radd">+15 s</button><button class="rbn" data-a="rend">Ende</button></span></div>`}if(el.dataset.h!==h){el.innerHTML=h;el.dataset.h=h}}
+setInterval(tick,500);
+const P=()=>S.plans.find(p=>p.id===R.id),addEx=x=>{P().ex.push({u:uid(),id:x.id,name:x.name,sets:3,reps:10,w:0})};
+function act(a,d,e){const A=S.active;switch(a){
+case'tab':R={tab:d.t};return render();
+case'newplan':{const p={id:uid(),name:'Neuer Plan',ex:[]};S.plans.push(p);R={tab:'training',view:'plan',id:p.id};return commit()}
+case'edit':R={tab:'training',view:'plan',id:d.id};return render();
+case'dup':{const p=S.plans.find(x=>x.id===d.id);S.plans.push({id:uid(),name:p.name+' (Kopie)',ex:p.ex.map(x=>({...x,u:uid()}))});return commit()}
+case'delplan':if(confirm('Plan wirklich löschen?')){S.plans=S.plans.filter(p=>p.id!==d.id);commit()}return;
+case'start':{const p=S.plans.find(x=>x.id===d.id);if(!p.ex.length)return alert('Dieser Plan hat noch keine Übungen.');if(A&&!confirm('Es läuft bereits ein Training. Verwerfen und neu starten?'))return;
+S.active={id:uid(),name:p.name,start:Date.now(),ex:p.ex.map(x=>{const l=last(x.id),w=x.w||(l?l.w:0);return{id:x.id,name:x.name,sets:Array.from({length:Math.max(1,x.sets)},()=>({w,r:x.reps,done:false}))}})};R={tab:'training',view:'active'};restEnd=0;return commit()}
+case'resume':R={tab:'training',view:'active'};return render();
+case'delhist':if(confirm('Einheit löschen?')){S.hist=S.hist.filter(w=>w.id!==d.id);commit()}return;
+case'openpick':R.pick=true;return render();
+case'closepick':if(e.target!==e.currentTarget&&e.target.dataset.a!=='closepick')return;R.pick=false;return render();
+case'pick':addEx(lib().find(x=>x.id===d.id));R.pick=false;return commit();
+case'newex':{const n=$('#nn').value.trim();if(!n)return;const x={id:uid(),name:n,m:$('#nm').value,c:1};S.ex.push(x);addEx(x);R.pick=false;return commit()}
+case'delex':if(confirm('Übung aus der Bibliothek löschen? Bestehende Pläne behalten sie.')){S.ex=S.ex.filter(x=>x.id!==d.id);commit()}return;
+case'rmex':P().ex=P().ex.filter(x=>x.u!==d.u);return commit();
+case'up':case'dn':{const l=P().ex,i=l.findIndex(x=>x.u===d.u),j=i+(a==='up'?-1:1);if(j<0||j>=l.length)return;[l[i],l[j]]=[l[j],l[i]];return commit()}
+case'rl':S.restLen=+d.n;return commit();
+case'chk':{const s=A.ex[d.e].sets[d.s];s.done=!s.done;if(s.done)restEnd=Date.now()+S.restLen*1000;return commit()}
+case'addset':{const l=A.ex[d.e].sets,z=l[l.length-1];l.push({w:z?z.w:0,r:z?z.r:10,done:false});return commit()}
+case'rmset':A.ex[d.e].sets.pop();return commit();
+case'radd':restEnd=(restEnd||Date.now())+15000;return tick();
+case'rend':restEnd=0;return tick();
+case'finish':{const ex=A.ex.map(x=>({...x,sets:x.sets.filter(s=>s.done)})).filter(x=>x.sets.length);if(!ex.length){if(!confirm('Kein Satz abgehakt. Training verwerfen?'))return;S.active=null}else{S.hist.unshift({id:A.id,name:A.name,start:A.start,end:Date.now(),ex});S.active=null}restEnd=0;R={tab:'training'};return commit()}
+case'discard':if(confirm('Training verwerfen? Nichts wird gespeichert.')){S.active=null;restEnd=0;R={tab:'training'};commit()}return;
+case'seg':R.seg=d.k;return render();
+case'per':R.per=d.k;return render();
+case'addbody':{const g=i=>num($('#'+i).value),x={id:uid(),t:pd('bd'),w:g('bw'),brust:g('bc'),bauch:g('bb'),taille:g('bt'),arm:g('ba'),fett:g('bf')};if(!(x.w||x.brust||x.bauch||x.taille||x.arm||x.fett))return alert('Bitte mindestens einen Wert eintragen.');S.body.push(x);return commit()}
+case'addpull':{const n=Math.round(num($('#pn').value));if(!n)return alert('Bitte die Anzahl der Wiederholungen eintragen.');S.pull.push({id:uid(),t:pd('pd'),n});return commit()}
+case'addcardio':{const g=i=>num($('#'+i).value),x={id:uid(),t:pd('cd'),type:$('#ct').value,min:g('cm'),avg:Math.round(g('ca')),max:Math.round(g('cx')),kcal:g('ck'),km:g('cs'),steps:Math.round(g('cp'))};if(!x.min)return alert('Bitte die Dauer in Minuten eintragen.');S.cardio.push(x);return commit()}
+case'delb':S.body=S.body.filter(x=>x.id!==d.id);return commit();
+case'delp':S.pull=S.pull.filter(x=>x.id!==d.id);return commit();
+case'delc':S.cardio=S.cardio.filter(x=>x.id!==d.id);return commit();
+case'newcat':{const n=$('#kn').value.trim();if(!n)return alert('Bitte einen Namen eingeben.');const c={id:uid(),name:n,unit:$('#ku').value.trim(),entries:[]};S.cats.push(c);R.seg=c.id;return commit()}
+case'addcat':{const c=S.cats.find(x=>x.id===d.id),v=num($('#kv').value);if(!v)return alert('Bitte einen Wert größer als 0 eintragen.');c.entries.push({id:uid(),t:pd('kd'),v});return commit()}
+case'delent':{const c=S.cats.find(x=>x.id===d.c);c.entries=c.entries.filter(x=>x.id!==d.id);return commit()}
+case'delcat':if(confirm('Kategorie samt allen Einträgen löschen?')){S.cats=S.cats.filter(x=>x.id!==d.id);R.seg='kraft';commit()}return;
+case'export':{const a2=document.createElement('a');a2.href=URL.createObjectURL(new Blob([JSON.stringify(S)],{type:'application/json'}));a2.download='prgrs-backup.json';a2.click();return}}}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-a]');if(t){e.preventDefault();act(t.dataset.a,t.dataset,{target:e.target,currentTarget:t})}});
+document.addEventListener('input',e=>{if(e.target.id==='q'){const q=e.target.value.toLowerCase();document.querySelectorAll('.pk').forEach(r=>r.style.display=r.dataset.n.includes(q)?'':'none')}});
+document.addEventListener('change',e=>{const t=e.target,f=t.dataset.f;if(!f)return;if(f==='sx'||f==='bk'||f==='met'){R[f]=t.value;return render()}const v=num(t.value),A=S.active,p=R.view==='plan'?P():null,x=p&&p.ex.find(y=>y.u===t.dataset.u);
+if(f==='pname')p.name=t.value;else if(f==='psets')x.sets=Math.round(v);else if(f==='preps')x.reps=Math.round(v);else if(f==='pw')x.w=v;
+else if(f==='aw')A.ex[t.dataset.e].sets[t.dataset.s].w=v;else if(f==='ar')A.ex[t.dataset.e].sets[t.dataset.s].r=Math.round(v);
+else if(f==='goal')S.goal=Math.max(1,Math.round(v)||4);
+else if(f==='import'){const fl=t.files[0];if(!fl)return;fl.text().then(j=>{try{const d=JSON.parse(j);if(!Array.isArray(d.plans)||!Array.isArray(d.hist))throw 0;if(confirm('Aktuelle Daten durch das Backup ersetzen?')){S=Object.assign(S,d);commit()}}catch(_){alert('Diese Datei ist kein gültiges PRGRS.-Backup.')}});return}
+save()});
+load().then(d=>{if(d)S=Object.assign(S,d);if(S.active)R={tab:'training',view:'active'};render()});
+if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+</script></body></html>
